@@ -8,7 +8,9 @@ import win32gui
 from ctypes import *
 import time
 import os
-# read applnk from lnk.xls file
+
+#+++++++++++++++++++++++++++++++++++
+
 
 xlsfilePath = os.getcwd() + '\lnk.xls'
 print xlsfilePath
