@@ -7,10 +7,13 @@ import win32con
 import win32gui
 from ctypes import *
 import time
-
+import os
 # read applnk from lnk.xls file
-xlsfile = r'd:\lnk.xls'
-book = xlrd.open_workbook(xlsfile)
+
+xlsfilePath = os.getcwd() + '\lnk.xls'
+print xlsfilePath
+
+book = xlrd.open_workbook(xlsfilePath)
 sheet0 = book.sheet_by_index(0)
 mqhost = str(sheet0.cell_value(0, 1))
 
