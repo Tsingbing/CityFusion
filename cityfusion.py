@@ -9,8 +9,6 @@ from ctypes import *
 import time
 import os
 
-
-
 xlsfilePath = os.getcwd() + '\lnk.xls'
 print xlsfilePath
 
