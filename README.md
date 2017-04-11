@@ -1,2 +1,0 @@
-# CityFusion
-python + rabbitmq + web 
