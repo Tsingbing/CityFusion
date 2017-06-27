@@ -44,21 +44,17 @@
 
     if (flag1 == 1) {
       document.getElementById("1").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-      var order = {
-        name: "sss",
-        drink: "ddd"
-      };
-      success = function (){
-        //alert('success sending orders');
-      }();
-        $.ajax({
-			    type: 'POST',
-			    url: '/api/orders',
-			    data: order,
-			    error: function() {
-			      alert('error sending orders');
-			    }
-		    });
+
+          var order = {name: "app1",drink: "close1"};
+          success = function (){}();
+            $.ajax({
+    			    type: 'POST',
+    			    url: '/api/orders',
+    			    data: order,
+    			    error: function() {
+    			      alert('error sending orders');
+    			    }
+    		    });
     }
     if (flag1 == 2) {
       document.getElementById("1").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -74,7 +70,16 @@
 
     if (flag2 == 1) {
       document.getElementById("2").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil("/api/orders?notifyServer=true&index=2");
+      var order = {name: "app2",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag2 == 2) {
       document.getElementById("2").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -89,7 +94,16 @@
   function btnAction3() {
     if (flag3 == 1) {
       document.getElementById("3").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=3");
+      var order = {name: "app3",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag3 == 2) {
       document.getElementById("3").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -104,7 +118,16 @@
   function btnAction4() {
     if (flag4 == 1) {
       document.getElementById("4").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=4");
+      var order = {name: "app4",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag4 == 2) {
       document.getElementById("4").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -119,7 +142,16 @@
   function btnAction5() {
     if (flag5 == 1) {
       document.getElementById("5").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=5");
+      var order = {name: "app5",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag5 == 2) {
       document.getElementById("5").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -134,7 +166,16 @@
   function btnAction6() {
     if (flag6 == 1) {
       document.getElementById("6").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=6");
+      var order = {name: "app6",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag6 == 2) {
       document.getElementById("6").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -149,7 +190,16 @@
   function btnAction7() {
     if (flag7 == 1) {
       document.getElementById("7").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=7");
+      var order = {name: "app7",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag7 == 2) {
       document.getElementById("7").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -164,7 +214,16 @@
   function btnAction8() {
     if (flag8 == 1) {
       document.getElementById("8").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=8");
+      var order = {name: "app8",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag8 == 2) {
       document.getElementById("8").getAttributeNode("style").value = "text-align:center;cursor:pointer"
@@ -179,7 +238,16 @@
   function btnAction9() {
     if (flag9 == 1) {
       document.getElementById("9").getAttributeNode("style").value = "text-align:center;color:red;cursor:pointer"
-    	  AjaxUtil(v_Path+"/MqServlet?notifyServer=true&index=9");
+      var order = {name: "app9",drink: "close1"};
+      success = function (){}();
+        $.ajax({
+          type: 'POST',
+          url: '/api/orders',
+          data: order,
+          error: function() {
+            alert('error sending orders');
+          }
+        });
     }
     if (flag9 == 2) {
       document.getElementById("9").getAttributeNode("style").value = "text-align:center;cursor:pointer"
