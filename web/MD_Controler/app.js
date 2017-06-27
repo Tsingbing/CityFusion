@@ -30,7 +30,6 @@ amqp.connect('amqp://localhost', function(err, conn) {
     var args = process.argv.slice(2);
     // var msg = args.slice(1).join(' ') || 'Hello World!';
     // var severity = (args.length > 0) ? args[0] : 'info';
-		var msg = 'Hello World!';
     var severity = 'messages_key';
 		ch.assertExchange(ex, 'direct', {durable: false});
 
@@ -44,7 +43,7 @@ amqp.connect('amqp://localhost', function(err, conn) {
 			ch.publish(ex, severity, new Buffer(data.name));
 			res.send("yes");
 		});
-		console.log(" [x] Sent %s: '%s'", severity, msg);
+		
   });
 
   //setTimeout(function() { conn.close(); process.exit(0) }, 500);
