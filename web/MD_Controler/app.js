@@ -1,14 +1,10 @@
 var express = require("express");
-
 //body 解析器
 var bodyParser = require("body-parser");
-//rabbitmq
-// var amqp = require('amqp');
 var amqp = require('amqplib/callback_api');
 var http = require("http");
 var app = express();
 var path = require('path');
-
 
 app.use(function(req, res, next) {
   //console.log("%s %s", req.method, req.url);

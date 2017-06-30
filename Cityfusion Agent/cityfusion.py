@@ -12,16 +12,12 @@ import SendKeys
 
 # read applnk from lnk.xls file
 
-
 xlsfilePath = os.getcwd() + '\lnk.xls'
 print xlsfilePath
 
 book = xlrd.open_workbook(xlsfilePath)
 sheet0 = book.sheet_by_index(0)
 
-timedaly = str(sheet0.cell_value(0, 3))
-print "time sleep:"+ timedaly + " s"
-time.sleep(float(timedaly))
 mqhost = str(sheet0.cell_value(0, 1))
 print mqhost
 print 'waiting mqhost ...'
@@ -32,7 +28,9 @@ print 'waiting mqhost ...'
 username = 'guest'
 pwd = 'guest'
 user_pwd = pika.PlainCredentials(username, pwd)
-s_conn = pika.BlockingConnection(pika.ConnectionParameters(mqhost, credentials=user_pwd))
+
+# the two parameters connection_attempts and retry_delay, lai dengdai jianli lianjie
+s_conn = pika.BlockingConnection(pika.ConnectionParameters(mqhost, credentials=user_pwd,connection_attempts=100,retry_delay=5))
 channel = s_conn.channel()
 
 # print connection
@@ -64,28 +62,6 @@ def mouse_click(x=None,y=None):
     time.sleep(0.15)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
 
-#def key_input(key_hex=None):
-    #print "input:"+int(key_hex)
-    #win32api.keybd_event(key_hex,0,0,0)
-    #win32api.keybd_event(key_hex,0,win32con.KEYEVENTF_KEYUP,0)
-    #time.sleep(0.01)
-
-#==================================================
-
-#win32api.ShellExecute(0,'open','C:\Users\Bingo\Desktop\sss.avi','','',1)
-#time.sleep(3)
-#appName = u"sss.avi"
-#appName = str(sheet0.cell_value(1,1));
-#print appName
-#hwnd= win32gui.FindWindow(None, appName)
-#print hwnd
-
-#win32gui.PostMessage(hwnd,win32con.WM_SYSCOMMAND,win32con.SC_MAXIMIZE,0)
-#time.sleep(3)
-#win32gui.SetForegroundWindow(hwnd)
-#time.sleep(3)
-#win32gui.PostMessage(hwnd,win32con.WM_CLOSE,0,0)
-
 def callback(ch, method, properties, body):
 
     print body
@@ -108,18 +84,13 @@ def callback(ch, method, properties, body):
                     print "key_click:" + key_value
                     #win32api.keybd_event(key_hex,0,0,0)
                     SendKeys.SendKeys(key_value)
-
-                    #key_input(int(sheet0.cell_value(i+1,1)),int(sheet0.cell_value(i+1,1)))
-                    #key_input(0xF7)
                     break
 
                 elif sheet0.cell_value(i+1,2) == 3:
                     print "Max windows:" + str(sheet0.cell_value(i+1,1))
-                    #appName = u"233.txt - 记事本"
                     appName = str(sheet0.cell_value(i+1,1));
                     hwnd= win32gui.FindWindow(None, appName)
                     print hwnd
-                    #win32gui.PostMessage(hwnd,win32con.WM_SYSCOMMAND,win32con.SC_MAXIMIZE,0)
                     win32gui.SetForegroundWindow(hwnd)
                     break
 
